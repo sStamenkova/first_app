@@ -23,7 +23,7 @@
 <ul class="nav navbar-nav navbar-right">
 
 <% if user_signed_in? %>
-<li><%= link_to 'My Products', "#", class: 'navbar-link' %></li>
+<li><%= link_to 'My Products', current_user, class: 'navbar-link' %></li>
 
 <li class="dropdown">
   <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
