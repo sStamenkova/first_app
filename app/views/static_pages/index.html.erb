@@ -1,0 +1,7 @@
+<% provide(:title, "Home") %>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag(:div, msg, class: "flash_#{name}") %>
+<% end %>
+
+<h1 class="text-center">Welcome to the page </h1>
