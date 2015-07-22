@@ -18,16 +18,37 @@
 <%= link_to 'First App', root_path, class: 'navbar-brand' %>
 </div>
 
-<div class="navbar-text pull-right">
+
+
+<ul class="nav navbar-nav navbar-right">
+
 <% if user_signed_in? %>
-  Logged in as <strong><%= current_user.username %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link' %>
+<li><%= link_to 'My Products', "#", class: 'navbar-link' %></li>
+
+<li class="dropdown">
+  <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+
+	<% if current_user.admin? %>
+		<strong><%= current_user.username %> (Admin)</strong>.
+	<% else %>
+		<strong><%= current_user.username %></strong>.
+	<% end %> 
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><%= link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link' %> </li>
+  	<li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link' %></li>
+  </ul>
+</li>
+
+  
 <% else %>
-  <%= link_to "Sign up", new_user_registration_path, class: 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, class: 'navbar-link'  %>
+ <li><%= link_to "Sign up", new_user_registration_path, class: 'navbar-link home-link' %></li>
+ <li><%= link_to "Login", new_user_session_path, class: 'navbar-link home-link'  %></li>
 <% end %>
-</div>
+
+</ul>
+
 
 
 </div>
@@ -41,3 +62,4 @@
 
 </body>
 </html>
+

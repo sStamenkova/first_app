@@ -17,6 +17,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 .field{
 	margin-bottom: 15px;
 }
@@ -64,5 +65,24 @@ body{
 
 	color: red;
 	margin-bottom: 20px;
+}
+
+a.dropdown-toggle{
+	color: gray;
+}
+
+a.dropdown-toggle:hover{
+
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.dropdown-menu a.navbar-link:hover{
+	color: black;
+}
+
+a.home-link:hover{
+	text-decoration: none;
 }
 
