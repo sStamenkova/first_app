@@ -86,3 +86,37 @@ a.home-link:hover{
 	text-decoration: none;
 }
 
+ul.products{
+
+	list-style-type: none;
+	margin-top: 50px;
+}
+
+ul.products li{
+
+	border-top: 1px solid #eee;
+	padding: 10px 0;
+}
+
+.product-title{
+
+	font-size: 20px;
+}
+
+.timestamp{
+
+	color: grey;
+	font-size: 10px;
+}
+
+div#new_product{
+
+	border: 1px solid #eee;
+	padding: 12px;
+	margin-top: 70%;
+}
+
+.product-field{
+
+	margin: 10px 0;
+}

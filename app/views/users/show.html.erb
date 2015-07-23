@@ -1,5 +1,38 @@
 <% provide(:title, "My Products") %>
 
-<h3><%= @user.username %></h3>
+<div class="container">
+<div class="row">
 
-<h1 class="text-center">List of the products</h1>
+	<div class="col-md-3">
+		<h3 style="margin-bottom: 0"><%= @user.username %></h3>
+		<span><%= pluralize(@user.products.count, "product") %></span>
+		
+		<% if current_user == @user %>
+		<div id="new_product">
+		<h4 style="margin-top: 0" class="text-center">Create a new product</h4>
+		<%= form_for(@product, html: {multipart: true}) do |f| %>
+			<%= f.text_field :title, placeholder: "Product title", class: 'form-control product-field' %>
+			<%= f.text_area :description, placeholder: "Product description...", class: 'form-control product-field', style: 'resize: none' %>
+			<%= f.submit "Post", class: 'btn btn-success btn-block' %>
+		<% end %>
+		</div>
+		<% end %>
+
+	</div>
+
+	<div class="col-md-9">
+		<h1 class="text-center">Products</h1>
+
+		<% if @user.products.any? %>
+			<ul class="products">
+			<%= render @products %>
+			</ul>
+		<% end %>
+	</div>
+
+</div>
+</div>
+
+
+
+
