@@ -16,14 +16,25 @@
 							<%= image_tag('default-avatar.png', class: 'img-responsive') %>
 							<% end %>
 						</div>
-						<div class="col-md-6" style="padding-left: 5px">
-							<span><%= link_to 'view my profile', current_user %></span>
+						<div class="col-md-6" style="padding-left: 10px">
+							<span><%= link_to 'view my profile', current_user, class: 'style-a' %></span>
 						</div>
 					</div>
 				</div>
 
-				<div class="col-md-9">
+				<div class="col-md-9" style="border-left: 1px solid #eee">
 					<h1 class="text-center">Dashboard</h1>
+
+					<ul class="products">
+						<% if @feed_items.any? %>
+						<%= render @feed_items %>
+						<% end %>
+					</ul>
+					
+					<div class="text-center">
+					<%= will_paginate @feed_items, renderer: BootstrapPagination::Rails %>
+					</div>
+
 				</div>
 
 			</div>
