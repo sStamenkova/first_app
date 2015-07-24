@@ -26,9 +26,10 @@ users = User.order(:created_at).take(10)
 
 content = Faker::Lorem.sentence(5)
 title = Faker::Commerce.product_name
+image = Faker::Avatar.image
 
 users.each do |user|
-user.products.create!(title: title, description: content)
+user.products.create!(title: title, description: content, image: image)
 end
 
 end

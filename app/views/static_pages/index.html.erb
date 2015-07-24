@@ -4,7 +4,30 @@
 <div class="row">
 	<div class="col-md-12">
 		<% if user_signed_in? %>
-		<h1 class="text-center">Dashboard</h1>
+			<div class="row">
+				<div class="col-md-3">
+					<h3><%= current_user.username %><small> (<%= pluralize(current_user.products.count, "product") %>)</small></h3>
+
+					<div class="row">
+						<div class="col-md-6" style="padding-right: 0">
+							<% if current_user.avatar.url.present? %>
+							<%= image_tag(current_user.avatar.url, class: 'img-responsive') %>
+							<% else %>
+							<%= image_tag('default-avatar.png', class: 'img-responsive') %>
+							<% end %>
+						</div>
+						<div class="col-md-6" style="padding-left: 5px">
+							<span><%= link_to 'view my profile', current_user %></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-9">
+					<h1 class="text-center">Dashboard</h1>
+				</div>
+
+			</div>
+
 		<% else %>
 		<h1 class="text-center">Welcome</h1>
 		<% end %>

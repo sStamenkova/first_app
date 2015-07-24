@@ -28,7 +28,7 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.2.0'
 
 #Image upload
-#gem 'rmagick'
+gem 'rmagick'
 gem 'carrierwave'
 
 #Faker
