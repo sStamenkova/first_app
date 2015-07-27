@@ -1,4 +1,11 @@
 <li>
+	
+    <% if product.user.avatar.url.present? %>
+    <%= link_to image_tag(product.user.avatar.url, class: 'img-responsive nav-img'), product.user %>
+    <% else %>
+    <%= link_to image_tag('default-avatar.png', class: 'img-responsive nav-img'), product.user %>
+    <% end %>
+	
 <%= link_to product.user.username, product.user, class: 'style-a' %>
 <div class="row" style="margin-top: 10px">
 	<div class="col-xs-3">
