@@ -33,9 +33,10 @@ gem 'carrierwave'
 
 #Faker
 gem 'faker', '1.4.2'
-
+#Pagination
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
