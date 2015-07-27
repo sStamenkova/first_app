@@ -32,13 +32,15 @@
 					<div class="text-center">
 					<%= will_paginate @feed_items, renderer: BootstrapPagination::Rails %>
 					</div>
-
 				</div>
 
 			</div>
 
 		<% else %>
-		<h1 class="text-center">Welcome</h1>
+		<div class="jumbotron">
+			<h1 class="text-center">Welcome to ProductH</h1>
+		</div>
+		
 		<% end %>
 	</div>
 </div>

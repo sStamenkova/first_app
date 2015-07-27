@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-before_action :correct_user, only: [:destroy]
+before_action :correct_user, only: [:destroy, :edit, :update]
 
 
 	def create
@@ -29,6 +29,28 @@ before_action :correct_user, only: [:destroy]
 		redirect_to request.referrer || root_url
 	end
 
+	def edit
+		@product = current_user.products.find_by(id: params[:id])
+	end
+
+	def update
+		@product = current_user.products.find_by(id: params[:id])
+
+		if @product.update_attributes(product_params)
+			redirect_to request.referrer || root_url
+		else
+			if @product.title == "" && @product.description == ""
+				flash.now[:alert] = "Title and description can't be empty"
+			elsif @product.title == ""
+				flash.now[:alert] = "Title can't be empty"
+			elsif @product.description == ""
+				flash.now[:alert] = "Description can't be empty"
+			end
+
+			render 'edit'
+		end
+	end
+
 	private
 
 	def product_params
@@ -39,4 +61,5 @@ before_action :correct_user, only: [:destroy]
 		@product = current_user.products.find_by(id: params[:id])
 		redirect_to root_url if @product.nil?
 	end
+
 end

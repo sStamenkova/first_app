@@ -43,6 +43,7 @@
 
 	color: green; 
 	margin-bottom: 50px;
+	text-align: center;
 }
 
 body{
@@ -129,6 +130,10 @@ h3 small{
 a.style-a{
 
 	color: #42CA77;
+}
+
+a.style-a:hover{
+	color: rgba(66, 202, 119, 0.6);
 }
 
 a.style-a:hover{

@@ -1,0 +1,16 @@
+<% provide(:title, "All users") %>
+<div class="container">
+<div class="row">
+
+	<div class="col-md-4 col-md-offset-4">
+		<ul class="products">
+			<%= render @users %>
+		</ul>
+
+		<div class="text-center">
+			<%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+		</div>
+	</div>
+
+</div>
+</div>
