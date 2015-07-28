@@ -37,7 +37,7 @@ before_action :correct_user, only: [:destroy, :edit, :update]
 		@product = current_user.products.find_by(id: params[:id])
 
 		if @product.update_attributes(product_params)
-			redirect_to request.referrer || root_url
+			redirect_to current_user
 		else
 			if @product.title == "" && @product.description == ""
 				flash.now[:alert] = "Title and description can't be empty"
