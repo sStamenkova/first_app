@@ -127,13 +127,14 @@ h3 small{
   font-size: 18px;
 }
 
-a.style-a{
+a.style-a, .thread a{
 
 	color: #42CA77;
 }
 
-a.style-a:hover{
+a.style-a:hover, .thread a:hover{
 	color: rgba(66, 202, 119, 0.6);
+	text-decoration: none;
 }
 
 a.style-a:hover{
@@ -191,4 +192,39 @@ a.style-a:hover{
 .navbar-inverse .navbar-nav > .open > a:focus{
 
 background-color: rgba(44, 177, 96, 0.6);
+}
+
+.comment_commontator{
+	font-weight: bold;
+}
+
+div.comment{
+	border-bottom: 1px solid #eee;
+    border-top: none;
+    border-left: none;
+}
+
+.thread{
+	padding-top: 10px;
+}
+
+.comment_undelete_link{
+	display: none;
+}
+
+.comment_upvote form > input, .comment_downvote form > input{
+
+	width: 15px;
+}
+
+.comment_votes span.comment_upvote{
+	margin-bottom: 0;
+}
+
+.comment_votes span.comment_downvote{
+	margin-top: 0;
+}
+
+span.comment_votes{
+	margin-top: -23px;
 }

@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "users/registrations" }
   resources :users, only: [:show, :index, :destroy]
   resources :products, only: [:create, :destroy, :edit, :update]
-
+  mount Commontator::Engine => '/commontator'
+  
  devise_scope :user do
     get "login", to: "users/sessions#new"
     get "signup", to: "users/registrations#new"

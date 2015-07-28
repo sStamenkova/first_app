@@ -36,7 +36,9 @@ gem 'faker', '1.4.2'
 #Pagination
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
-
+#Comments
+gem 'commontator', '~> 4.10.0'
+gem 'acts_as_votable'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
