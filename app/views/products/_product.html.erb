@@ -17,10 +17,10 @@
 	</div>
 
 	<div class="col-xs-9">
-		<p class="product-title"><%= product.title %></p>
-		<p><strong>Description: </strong><%= product.description %></p>
 		<div class="row">
 		<div class="col-xs-8">
+		<p class="product-title"><%= product.title %></p>
+		<p><strong>Description: </strong><%= product.description %></p>
 		<span class="timestamp">Posted <%= time_ago_in_words(product.created_at) %> ago.</span>
 		<%= commontator_thread(product) %>
 		</div>
