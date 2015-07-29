@@ -47,7 +47,7 @@
 }
 
 body{
-	margin-top: 75px;
+	margin-top: 53px;
 }
 
 .flash_success {
@@ -241,6 +241,15 @@ a.comment_delete_link{
 	margin-right: 40px;
 }
 
+.comment_form_field textarea{
+	border-radius: 3px;
+	resize: none;
+}
+
+.comment_form_actions input{
+	color: green;
+}
+
 .edit-section{
-	padding-top: 96px;
+	padding-top: 75px;
 }

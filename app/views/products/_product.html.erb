@@ -25,6 +25,7 @@
 		<%= commontator_thread(product) %>
 		</div>
 		<div class="col-xs-4">
+		<%= rating_for product, "quality", :disable_after_rate => false %>
 		<% if current_user == product.user %>
 		<div class="edit-section">
 		<%= link_to 'edit', edit_product_path(product.id), class: 'style-a' %>
@@ -32,6 +33,7 @@
 		<%= link_to 'delete', product, method: :delete, data: { confirm: "Are you sure you want to remove this product?" }, class: 'style-a' %>
 		</div>
 		<% end %>
+		
 		</div>
 		</div>
 	</div>

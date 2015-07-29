@@ -39,6 +39,8 @@ gem 'will_paginate-bootstrap'
 #Comments
 gem 'commontator', '~> 4.10.0'
 gem 'acts_as_votable'
+#Rating
+gem 'ratyrate'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
