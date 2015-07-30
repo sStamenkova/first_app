@@ -253,3 +253,21 @@ a.comment_delete_link{
 .btn-group{
 	padding-top: 75px;
 }
+
+ul.dropdown-menu{
+	width: 192px;
+}
+
+@media (max-width: 767px){
+
+	  .navbar-nav .open .dropdown-menu li a.navbar-link{ 
+       color: rgba(151, 195, 146, 0.94);
+	   }
+
+	   .form-control{
+	   	    display: inline-block;
+    		width: 30%;
+    		margin-left: 10px;
+	   }
+
+}

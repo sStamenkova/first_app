@@ -8,4 +8,10 @@ class Product < ActiveRecord::Base
   validates :user_id, presence: true
   validates :description, presence: true
   validates :title, presence: true
+
+
+  def self.search(query)
+  	where("title like ?", "%#{query}%")
+  end
+
 end
