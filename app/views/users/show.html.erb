@@ -19,7 +19,7 @@
       	<div id="new_product">
 
 		<h4 style="margin-top: 0" class="text-center">Create a new product</h4>
-		<%= form_for(@product, html: {multipart: true}) do |f| %>
+		<%= form_for(@product, html: {multipart: true}, remote: true) do |f| %>
 
 			<% flash.each do |name, msg| %>
   			<%= content_tag(:div, msg, class: "flash_#{name} text-center") %>

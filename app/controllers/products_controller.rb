@@ -7,7 +7,10 @@ before_action :correct_user, only: [:destroy, :edit, :update]
 		@product = current_user.products.build(product_params)
 
 		if @product.save
-			redirect_to current_user
+			# redirect_to current_user
+			respond_to do |format|
+    			format.js
+  			end
 		else
 			if @product.title == "" && @product.description == ""
 				flash[:alert] = "Title and description can't be empty"
@@ -26,7 +29,10 @@ before_action :correct_user, only: [:destroy, :edit, :update]
 
 	def destroy
 		@product.destroy
-		redirect_to request.referrer || root_url
+		respond_to do |format|
+    		format.js
+  		end
+		#redirect_to request.referrer || root_url
 	end
 
 	def edit

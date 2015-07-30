@@ -1,4 +1,4 @@
-<li>
+<li id="product_<%= product.id %>">
 	
     <% if product.user.avatar.url.present? %>
     <%= link_to image_tag(product.user.avatar.url, class: 'img-responsive nav-img'), product.user %>
@@ -29,7 +29,7 @@
 		<% if current_user == product.user %>
 		<div class="btn-group">
 		<%= link_to 'edit', edit_product_path(product.id), class: 'btn btn-warning' %>
-		<%= link_to 'delete', product, method: :delete, data: { confirm: "Are you sure you want to remove this product?" }, class: 'btn btn-danger' %>
+		<%= link_to 'delete', product, method: :delete, data: { confirm: "Are you sure you want to remove this product?" }, remote: true, class: 'btn btn-danger' %>
 		</div>
 		<% end %>
 		

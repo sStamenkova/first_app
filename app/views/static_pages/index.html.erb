@@ -22,13 +22,13 @@
 					<h1 class="text-center">Dashboard</h1>
 
 					<ul class="products">
-						<% if @feed_items.any? %>
-						<%= render @feed_items %>
+						<% if @products.any? %>
+						<%= render @products %>
 						<% end %>
 					</ul>
 					
 					<div class="text-center">
-					<%= will_paginate @feed_items, renderer: BootstrapPagination::Rails %>
+					<%= will_paginate @products, renderer: BootstrapPagination::Rails %>
 					</div>
 				</div>
 

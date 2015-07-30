@@ -1,0 +1,3 @@
+$(".product-field").val('');
+$(".products").prepend('<%= j render @product %>');
+$("#product_<%= @product.id %>").hide().fadeIn(1000);
