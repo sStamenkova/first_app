@@ -4,7 +4,7 @@ before_action :correct_user, only: [:destroy, :edit, :update]
 
 
 	def create
-		@product = current_user.products.build(product_params)
+		@product = current_user.products.new(product_params)
 
 		if @product.save
 			# redirect_to current_user
@@ -36,14 +36,16 @@ before_action :correct_user, only: [:destroy, :edit, :update]
 	end
 
 	def edit
-		@product = current_user.products.find_by(id: params[:id])
+		#@product = current_user.products.find_by(id: params[:id])
 	end
 
 	def update
 		@product = current_user.products.find_by(id: params[:id])
 
 		if @product.update_attributes(product_params)
-			redirect_to current_user
+			respond_to do |format|
+    		format.js
+  			end
 		else
 			if @product.title == "" && @product.description == ""
 				flash.now[:alert] = "Title and description can't be empty"

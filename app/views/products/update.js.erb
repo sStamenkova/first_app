@@ -1,0 +1,6 @@
+$("#myModal").modal('hide');
+$("#product_<%= @product.id %>").fadeOut(500, function(){
+$(this).remove();
+$(".products").prepend('<%= j render @product %>');
+$("#product_<%= @product.id %>").hide().fadeIn(1000);
+});
